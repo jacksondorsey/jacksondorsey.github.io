@@ -101,6 +101,18 @@
             max-width: var(--max-width);
             margin: 0 auto;
             padding: 4rem 2rem 3rem;
+            display: flex;
+            gap: 2.5rem;
+            align-items: flex-start;
+        }
+
+        .hero-photo {
+            flex-shrink: 0;
+        }
+
+        .hero-photo img {
+            width: 200px;
+            border-radius: 6px;
         }
 
         .hero h1 {
@@ -243,6 +255,13 @@
 
             .hero {
                 padding: 2.5rem 1.5rem 2rem;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .hero-photo img {
+                width: 160px;
             }
 
             .hero h1 {
@@ -276,13 +295,18 @@
 
 <main>
     <div class="hero" id="about">
+        <div class="hero-photo">
+            <img src="headshot.png" alt="Jackson Dorsey">
+        </div>
+        <div class="hero-text">
         <h1>Jackson Dorsey</h1>
         <p class="subtitle">Assistant Professor of Economics</p>
-        <p class="institution">The University of Texas at Austin</p>
+        <p class="institution"><a href="https://liberalarts.utexas.edu/economics/">The University of Texas at Austin</a></p>
         <div class="bio">
             <p>I am an Assistant Professor in the Department of Economics at the University of Texas at Austin. My primary research fields are environmental &amp; energy economics and industrial organization.</p>
             <p>The best way to contact me is by <a href="mailto:jacksondorsey27@gmail.com">email</a>.</p>
             <p>Here is a link to my <a href="papers/cv.pdf">CV</a>.</p>
+        </div>
         </div>
     </div>
 
