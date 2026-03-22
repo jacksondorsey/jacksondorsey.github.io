@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jackson Dorsey - Assistant Professor of Economics</title>
+    <meta name="description" content="Jackson Dorsey, Assistant Professor of Economics at The University of Texas at Austin. Research in environmental & energy economics and industrial organization.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #bf5700;
+            --primary-dark: #a04a00;
+            --text: #333;
+            --text-light: #555;
+            --bg: #fff;
+            --bg-alt: #f9f7f5;
+            --border: #e0d8d0;
+            --max-width: 800px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Sans 3', 'Segoe UI', sans-serif;
+            color: var(--text);
+            line-height: 1.7;
+            font-size: 17px;
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+
+        /* Navigation */
+        header {
+            background: var(--bg);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-name {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--text);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text);
+        }
+
+        /* Hero / About */
+        .hero {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 4rem 2rem 3rem;
+        }
+
+        .hero h1 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+            color: var(--text);
+        }
+
+        .hero .subtitle {
+            font-size: 1.15rem;
+            color: var(--text-light);
+            font-weight: 300;
+            margin-bottom: 0.1rem;
+        }
+
+        .hero .institution {
+            font-size: 1.05rem;
+            color: var(--text-light);
+            font-weight: 300;
+            margin-bottom: 2rem;
+        }
+
+        .hero .bio {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            max-width: 650px;
+        }
+
+        .hero .bio p {
+            margin-bottom: 1rem;
+        }
+
+        /* Sections */
+        section {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 2.5rem 2rem;
+        }
+
+        section h2 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary);
+            display: inline-block;
+        }
+
+        /* Papers */
+        .paper {
+            margin-bottom: 2rem;
+        }
+
+        .paper-title {
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: var(--text);
+        }
+
+        .paper-authors {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-top: 0.15rem;
+        }
+
+        .paper-journal {
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-light);
+            margin-top: 0.15rem;
+        }
+
+        .paper-links {
+            margin-top: 0.3rem;
+            font-size: 0.9rem;
+        }
+
+        .paper-links a {
+            margin-right: 0.8rem;
+        }
+
+        /* Teaching */
+        .teaching-block {
+            margin-bottom: 2rem;
+        }
+
+        .teaching-block h3 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.6rem;
+        }
+
+        .course {
+            margin-bottom: 0.5rem;
+            font-size: 0.98rem;
+        }
+
+        .course-name {
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* Mobile */
+        @media (max-width: 640px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--bg);
+                border-bottom: 1px solid var(--border);
+                padding: 1rem 2rem;
+                gap: 1rem;
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .hero {
+                padding: 2.5rem 1.5rem 2rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            section {
+                padding: 2rem 1.5rem;
+            }
+
+            nav {
+                position: relative;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <span class="nav-name">Jackson Dorsey</span>
+        <button class="menu-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#teaching">Teaching</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <div class="hero" id="about">
+        <h1>Jackson Dorsey</h1>
+        <p class="subtitle">Assistant Professor of Economics</p>
+        <p class="institution">The University of Texas at Austin</p>
+        <div class="bio">
+            <p>I am an Assistant Professor in the Department of Economics at the University of Texas at Austin. My primary research fields are environmental &amp; energy economics and industrial organization.</p>
+        </div>
+    </div>
+
+    <section id="research">
+        <h2>Published and Accepted Papers</h2>
+
+        <div class="paper">
+            <div class="paper-title">Solar Market Frictions: The Role of Platforms and Policies</div>
+            <div class="paper-journal">The Review of Economics and Statistics (Forthcoming)</div>
+            <div class="paper-links">
+                <a href="#">Preprint Version</a>
+                <a href="#">Appendix</a>
+            </div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">Soaking Up the Sun: Battery Investment, Renewable Energy, and Market Equilibrium</div>
+            <div class="paper-authors">with Andrew Butters &amp; Gautam Gowrisankaran</div>
+            <div class="paper-journal">Econometrica, 2025</div>
+            <div class="paper-links">
+                <a href="#">Published Version</a>
+                <a href="#">Appendix</a>
+                <a href="#">Working Paper</a>
+            </div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">Fueling Alternatives: Gas Station Choice and the Implications for Electric Charging</div>
+            <div class="paper-authors">with Ashley Langer &amp; Shaun McRae</div>
+            <div class="paper-journal">American Economic Journal: Economic Policy, 2025</div>
+            <div class="paper-links">
+                <a href="#">Published Version</a>
+                <a href="#">Appendix</a>
+                <a href="#">Working Paper</a>
+            </div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">Unequal Uptake: Assessing Distributional Disparities in the Residential Solar Market</div>
+            <div class="paper-authors">with Derek Wolfson</div>
+            <div class="paper-journal">Journal of the Association of Environmental and Resource Economists, 2024</div>
+            <div class="paper-links">
+                <a href="#">Published Version</a>
+                <a href="#">Appendix</a>
+                <a href="#">Working Paper</a>
+            </div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">Waiting for the Courts: Effects of Policy Uncertainty on Pollution and Investment</div>
+            <div class="paper-journal">Environmental &amp; Resource Economics, 2019</div>
+            <div class="paper-links">
+                <a href="#">Published Version</a>
+                <a href="#">Appendix</a>
+                <a href="#">Working Paper</a>
+            </div>
+        </div>
+
+        <h2 style="margin-top: 2.5rem;">Working Papers and Work In Progress</h2>
+
+        <div class="paper">
+            <div class="paper-title">Pollution Pricing in Equilibrium: Production, Reallocation, and Aggregate Impacts</div>
+            <div class="paper-authors">with Andrew Butters and Ivan Rudik</div>
+            <div class="paper-links"><a href="#contact">Email for Draft</a></div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">Fraud and Enforcement in Vehicle Emissions Inspections</div>
+            <div class="paper-authors">with Jacob Bradt</div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">Carrots or Sticks? Environmental Policy under Imperfect Information</div>
+        </div>
+    </section>
+
+    <section id="teaching">
+        <h2>Teaching</h2>
+
+        <div class="teaching-block">
+            <h3>University of Texas at Austin</h3>
+            <div class="course">
+                <span class="course-name">ECO 330T, Methods of Environmental Policy Analysis</span>, 2023&ndash;Present
+                &middot; <a href="#">Syllabus</a>
+            </div>
+            <div class="course">
+                <span class="course-name">ECO 330T, Energy and Environmental Economics</span>, 2023&ndash;Present
+                &middot; <a href="#">Syllabus</a>
+            </div>
+        </div>
+
+        <div class="teaching-block">
+            <h3>Indiana University</h3>
+            <div class="course">
+                <span class="course-name">BUS G 350, Business Econometrics</span>, 2018&ndash;2022
+                &middot; <a href="#">Syllabus</a>
+            </div>
+        </div>
+
+        <div class="teaching-block">
+            <h3>University of Arizona</h3>
+            <div class="course"><span class="course-name">ECON 373, Environmental Economics</span>, Fall 2017, Fall 2016, &amp; Summer 2016</div>
+            <div class="course"><span class="course-name">ECON 200, Principles of Economics</span>, Summer 2014</div>
+            <div class="course"><span class="course-name">ECON 300, Microeconomic Analysis for Business (Online)</span>, Winter 2015 &amp; Summer 2015</div>
+            <div class="course"><span class="course-name">ECON 330, Macroeconomic Institutions and Policy (Online)</span>, Winter 2014</div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>The best way to contact me is by email: <a href="mailto:jdorsey@utexas.edu">jdorsey@utexas.edu</a></p>
+    </section>
+</main>
+
+<footer>
+    &copy; 2026 Jackson Dorsey
+</footer>
+
+</body>
+</html>
